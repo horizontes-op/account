@@ -28,6 +28,13 @@ public interface AccountController {
         @RequestBody(required = true) AccountIn in
     );
 
+    @PostMapping("/accounts/{id}/change-role")
+    public ResponseEntity<ChangeRoleOut> changeRole(
+        @PathVariable(required = true) String id,
+        @RequestBody(required = true) ChangeRoleIn in,
+        @RequestHeader(required = true, name = "role-user") String roleUser
+    );
+
     @GetMapping("/accounts")
     public ResponseEntity<AccountOut> read(
         @RequestHeader(required = true, name = "id-user") String idUser,

@@ -5,10 +5,9 @@ import lombok.experimental.Accessors;
 
 @Builder
 @Accessors(fluent = true, chain = true)
-public record AccountOut (
+public record ChangeRoleOut(
     String id,
     String name,
-    String email,
     String role
 ) {
     
